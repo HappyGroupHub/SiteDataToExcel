@@ -1,0 +1,2 @@
+openpyxl~=3.2.0b1
+selenium~=4.17.2
