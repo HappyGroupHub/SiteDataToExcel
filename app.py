@@ -16,7 +16,7 @@ def get_data_from_url(url):
 
     # Extract data from table rows within the "thead" section
     rows = table.find("thead").find_all("tr")
-    data = [[cell.text.strip() for cell in row.find_all("td")] for row in rows]
+    data = [[cell.text.strip() for cell in row.find_all(["th", "td"])] for row in rows]
 
     return data
 
@@ -36,7 +36,7 @@ def save_data_to_excel(data, filename):
 
 
 if __name__ == "__main__":
-    url = "https://hapiwangy.github.io/enterprise_visited/"
+    url = input("Please enter the URL of the website to extract data from: ")
     data = get_data_from_url(url)
 
     if data:
